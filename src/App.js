@@ -33,12 +33,12 @@ class App extends React.Component {
                             ...snapShot.data()
                         }
                     });
-                });
 
-            } else {
-                this.setState({ currentUser: userAuth })
+                    console.log("state change: ", this.state)
+                });
             }
-            console.log("state change: ", this.state);
+
+            this.setState({ currentUser: userAuth })
         });
     }
 
