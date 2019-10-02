@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
@@ -11,13 +10,15 @@ import { auth } from '../../firebase/firebase.utils';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
-import { HeaderContainer, LogoContainer, OptionsContainer, 
-    OptionDiv, OptionLink } from './header.styles';
+import { HeaderContainer, LogoContainer, 
+        OptionsContainer, OptionLink 
+       } from './header.styles';
+
 
 const Header = ({ currentUser, hidden }) => (
     <HeaderContainer>
         <LogoContainer to='/'>
-            <Logo className='Logo' />
+            <Logo className='logo' />
         </LogoContainer>
         <OptionsContainer>
             <OptionLink to='/shop'>
@@ -27,7 +28,7 @@ const Header = ({ currentUser, hidden }) => (
                 CONTACT
             </OptionLink>
             { currentUser ? (
-                <OptionLink onClick={() => auth.signOut()}>
+                <OptionLink as='div' onClick={() => auth.signOut()}>
                 SIGN OUT
                 </OptionLink>
             ) : (
@@ -38,7 +39,6 @@ const Header = ({ currentUser, hidden }) => (
             <CartIcon />
         </OptionsContainer>
         { hidden ? null : <CartDropdown /> }
-        
     </HeaderContainer>
 ); 
 
