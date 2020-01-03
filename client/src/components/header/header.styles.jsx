@@ -25,7 +25,7 @@ export const LogoContainer = styled(Link)`
       width: 50px;
       padding: 0;
     }
-`
+`;
 
 export const OptionsContainer = styled.div`
     width: 50%;
@@ -33,7 +33,11 @@ export const OptionsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-`
+  
+    @media screen and (max-width: 800px){
+      width: 80%;
+    }
+`;
 
 export const OptionLink = styled(Link)`
     padding: 10px 15px;
