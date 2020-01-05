@@ -1,5 +1,7 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import { clearCart } from '../../redux/cart/cart.actions';
+import { store } from '../../redux/store';
 import axios from 'axios';
 
 
@@ -17,6 +19,7 @@ const StripeCheckoutButton = ({ price }) => {
             }
         }).then(response => {
             alert('Payment successful');
+            store.dispatch(clearCart());
         }).catch(error => {
             console.log('Payment error: ', JSON.parse(error));
             alert(
@@ -41,5 +44,6 @@ const StripeCheckoutButton = ({ price }) => {
     );
 
 };
+
 
 export default StripeCheckoutButton;
