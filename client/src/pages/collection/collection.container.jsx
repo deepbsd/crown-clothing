@@ -5,7 +5,6 @@ import { createStructuredSelector } from 'reselect';
 
 import {  selectIsCollectionsLoaded } from '../../redux/shop/shop.selectors';
 import WithSpinner from '../../components/with-spinner/with-spinner.component';
-//import Spinner from '../../components/spinner/spinner.component';
 import CollectionPage from './collection.component';
 
 
