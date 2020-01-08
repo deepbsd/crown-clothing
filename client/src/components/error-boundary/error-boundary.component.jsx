@@ -35,7 +35,6 @@ class ErrorBoundary extends React.Component {
                             
                             <p>So sorry, the towel boy will bring you something 
                                 to dry off with soon!</p>
-                            
                         </ErrorImageText>
                     </ErrorImageContainer>
                 </ErrorImageOverlay>
